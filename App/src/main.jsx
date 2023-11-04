@@ -1,6 +1,5 @@
 import { StrictMode } from "react";
 import { createRoot } from "react-dom/client";
-import { ava } from "./assets/img/avatar.jpg";
 import "./index.css";
 //data
 const skills = [
@@ -8,7 +7,7 @@ const skills = [
 ]
 // functions
 function Avatar() {
-  return (<img src={ava}/>)
+  return (<p>Hello</p>)
 }
 
 function Intro() {
