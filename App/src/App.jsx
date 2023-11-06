@@ -1,4 +1,5 @@
 //imports
+import { useState } from 'react';
 import './App.css';
 //var
 const messages = [
@@ -8,7 +9,15 @@ const messages = [
 ];
 //exports
 export default function App() {
-    const step = 1;
+    const [step, setStep] = useState(1);
+
+    function nextStep() {
+        setStep(step + 1)
+    }
+
+    function previousStep() {
+        setStep(step - 1)
+    }
     return (
         <div className="steps">
             <div className="numbers">
@@ -18,8 +27,8 @@ export default function App() {
             </div>
             <p className="message">Step {step}: {messages[step - 1]}</p>
             <div className="buttons">
-                <button className="purpuleColor">Previous</button>
-                <button className="purpuleColor">Next</button>
+                <button className="purpuleColor" onClick={previousStep}>Previous</button>
+                <button className="purpuleColor" onClick={nextStep}>Next</button>
             </div>
         </div>
     )
