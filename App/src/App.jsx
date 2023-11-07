@@ -2,34 +2,25 @@
 import { useState } from 'react';
 import './App.css';
 //var
-const messages = [
-    'Learn React ⚛️',
-    'Apply for jobs 💼',
-    'Invest your new income 🤑',
-];
+
 //exports
 export default function App() {
-    const [step, setStep] = useState(1);
-
-    function nextStep() {
-        setStep(step + 1)
-    }
-
-    function previousStep() {
-        setStep(step - 1)
-    }
-    return (
-        <div className="steps">
-            <div className="numbers">
-                <div className={`${step >= 1 ? 'active' : ''}`}>1</div>
-                <div className={`${step >= 2 ? 'active' : ''}`}>2</div>
-                <div className={`${step >= 3 ? 'active' : ''}`}>3</div>
-            </div>
-            <p className="message">Step {step}: {messages[step - 1]}</p>
-            <div className="buttons">
-                <button className="purpuleColor" onClick={previousStep}>Previous</button>
-                <button className="purpuleColor" onClick={nextStep}>Next</button>
-            </div>
+    const [step, addStep] = useState(1);
+    const [date, addDate] = useState(new Date());
+    let count = 0
+    return(
+        <>
+        <div className='stepCounter'>
+            <button>+</button>
+            <h2>Step:{step}</h2>
+            <button>-</button>
         </div>
+        <div className='dateCounter'>
+            <button>+</button>
+            <h2>Count:{count}</h2>
+            <button>-</button>
+        </div>
+        <h2>{String(date)}</h2>
+        </>
     )
 }
