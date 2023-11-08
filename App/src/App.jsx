@@ -6,8 +6,9 @@ import './App.css';
 //exports
 export default function App() {
     const [step, addStep] = useState(1);
-    const [date, addDate] = useState(new Date());
-    let count = 0
+    const [count, addCount] = useState(0);
+    let date = new Date('june 21 2027')
+    date.setDate(date.getDate + count)
     return(
         <>
         <div className='stepCounter'>
